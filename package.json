@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "npm run build && tsx server/index.ts",
     "build": "vite build",
+    "start": "tsx server/index.ts",
     "typecheck": "tsc --noEmit",
     "test": "node --import tsx --test server/**/*.test.ts src/**/*.test.ts"
   },

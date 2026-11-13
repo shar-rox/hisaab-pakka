@@ -1,0 +1,9 @@
+flowchart LR
+  B[Browser counter UI\nReact + Vite] -->|JSON control + PCM binary| A[Node backend\nExpress + ws]
+  A -->|WSS + protected key| S[Gnani Prisma v3.0\nstreaming STT]
+  A -->|WSS + protected key| T[Gnani Timbre v3.0\nstreaming TTS]
+  S -->|transcript events| A
+  T -->|base64 raw PCM chunks| A
+  A -->|transcript + audio chunks| B
+  B --> L[(Local browser ledger\nlocalStorage / device)]
+  B --> V[Visible audit trail\nunderstood → corrected → confirmed → committed]

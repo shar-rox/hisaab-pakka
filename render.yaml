@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: hisaab-pakka
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: GNANI_API_KEY_ID
+        sync: false
